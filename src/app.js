@@ -4,6 +4,12 @@
   paths[""] = login;
   paths["#/login"] = login;
   paths["#/signup"] = signup;
+  paths["#/game"] = game;
+  paths["#/404"] = status404;
 
-  paths[hash]();
+  if (paths[hash]) {
+    paths[hash]();
+  } else {
+    paths["#/404"]();
+  }
 })();
