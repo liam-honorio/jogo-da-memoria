@@ -34,7 +34,7 @@ const formLogin = (function() {
       content: "Forget password?"
     });
 
-    const $btn = btnCollabcode.render("Login");
+    const $btn = btnCollabcode.render({ content: "Login", path: "game" });
 
     return `
       ${$usernameLabel}

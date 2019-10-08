@@ -36,7 +36,7 @@ const formSignup = (function() {
       type: "password"
     });
 
-    const $btn = btnCollabcode.render("Signup");
+    const $btn = btnCollabcode.render({ content: "Signup", path: "login" });
 
     return `
       ${$usernameLabel}

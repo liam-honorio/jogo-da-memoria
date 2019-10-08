@@ -27,14 +27,23 @@ const flatButton = (function() {
     $head.insertAdjacentElement("beforeend", $style);
   };
 
-  module.render = (content = "", active = false) => {
+  module.handleClick = path => {
+    event.preventDefault();
+    console.log(path);
+    window.location.hash = `#/${path}`;
+  };
+
+  module.render = (content = "", active = false, path = "") => {
     module._id++;
     module._style(active);
 
-    return `<a href="#" class="flat-button-${module._id}">${content}</a>`;
+    return `<a href="#" 
+              onclick="flatButton.handleClick('${path}')"
+              class="flat-button-${module._id}">${content}</a>`;
   };
 
   return {
-    render: module.render
+    render: module.render,
+    handleClick: module.handleClick
   };
 })();
